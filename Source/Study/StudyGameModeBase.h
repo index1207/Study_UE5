@@ -13,5 +13,5 @@ UCLASS()
 class STUDY_API AStudyGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+	AStudyGameModeBase();
 };
