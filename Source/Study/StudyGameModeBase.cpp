@@ -5,7 +5,7 @@
 
 AStudyGameModeBase::AStudyGameModeBase()
 {
-	static const ConstructorHelpers::FClassFinder<APawn> playerPawn(TEXT("/Script/CoreUObject.Class'/Script/Study.MyCharacter'"));
+	static const ConstructorHelpers::FClassFinder<APawn> playerPawn(TEXT("/Script/Engine.Blueprint'/Game/Blueprints/BP_PlayerCharacter.BP_PlayerCharacter_C'"));
 	if (playerPawn.Class != nullptr) {
 		DefaultPawnClass = playerPawn.Class;
 	}

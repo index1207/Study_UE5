@@ -7,13 +7,13 @@
 #include "MyCharacter.generated.h"
 
 UCLASS()
-class STUDY_API AMyCharacter : public ACharacter
+class STUDY_API APlayerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	AMyCharacter();
+	APlayerCharacter();
 
 protected:
 	// Called when the game starts or when spawned
@@ -28,4 +28,12 @@ public:
 private:
 	class USpringArmComponent* springArm;
 	class UCameraComponent* camera;
+private:
+	void MoveForward(float);
+	void MoveRight(float);
+
+	void DoCrouch();
+
+	void BeginSprint();
+	void EndSprint();
 };
