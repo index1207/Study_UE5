@@ -4,6 +4,7 @@
 #include "MyAnimInstance.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/PawnMovementComponent.h"
+#include "PlayerCharacter.h"
 
 void UMyAnimInstance::NativeUpdateAnimation(float delta)
 {
@@ -14,10 +15,11 @@ void UMyAnimInstance::NativeUpdateAnimation(float delta)
 		Speed = pawn->GetVelocity().Size();
 		Direction = CalculateDirection(pawn->GetVelocity(), pawn->GetActorRotation());
 
-		auto charactor = Cast<ACharacter>(pawn);
+		auto charactor = Cast<APlayerCharacter>(pawn);
 		if (charactor) {
 			IsJumping = charactor->GetMovementComponent()->IsFalling();
 			IsCrouching = charactor->bIsCrouched;
+			IsDownFireButton = charactor->bIsDownFireButton;
 		}
 	}
 }

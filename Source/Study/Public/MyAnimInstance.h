@@ -28,4 +28,7 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=PlayerState, meta = (AllowPrivateAccess = "true"))
 	bool IsCrouching;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=PlayerState, meta = (AllowPrivateAccess = "true"))
+	bool IsDownFireButton;
 };
